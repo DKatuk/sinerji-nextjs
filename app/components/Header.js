@@ -14,18 +14,23 @@ function Header() {
     setIsOpen(!isOpen);
   }
 
+  console.log(isOpen);
   // unmounting mobile dropdown menu when clicked outside
   useEffect(() => {
     function hamburgerClickedOutside(event) {
-      if (refOne.current && !refOne.current.contains(event.target) && !refTwo) {
-        setIsOpen(false);
+      if (refOne.current && !refOne.current.contains(event.target)) {
+        if (refTwo.current.contains(event.target)) {
+          setIsOpen(true);
+        } else {
+          setIsOpen(false);
+        }
       }
     }
     document.addEventListener("click", hamburgerClickedOutside, true);
     return () => {
       document.removeEventListener("click", hamburgerClickedOutside, true);
     };
-  }, []);
+  });
 
   return (
     <div className="relative mt-2 flex justify-center items-center w-full">
