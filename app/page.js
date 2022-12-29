@@ -93,13 +93,13 @@ function Home() {
     observer.observe(myRef.current);
   }, []);
 
-//handle navigation to contact form
+  //handle navigation to contact form
   const handleClick = (e) => {
-      e.preventDefault();
-      document.querySelector("#find-consultation").scrollIntoView({
-        behavior: "smooth",
-      });
-  }
+    e.preventDefault();
+    document.querySelector("#find-consultation").scrollIntoView({
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div>
@@ -236,9 +236,7 @@ function Home() {
             width={1920}
             height={1080}
           />
-          <div
-            className="absolute mx-auto top-3 left-5 right-0 md:top-16 md:left-16 md:justify-start w-full h-full"
-          >
+          <div className="absolute mx-auto top-3 left-5 right-0 md:top-16 md:left-16 md:justify-start w-full h-full">
             <form className="bg-white bg-opacity-90 hover:bg-opacity-100 py-12 px-8 rounded-xl w-80 md:h-[500px] md:w-[420px] transition-all duration-200 ease-in">
               <div id="find-consultation" className="flex flex-col md:gap-2">
                 <h1 className="text-center font-bold mb-2 text-primary-100">

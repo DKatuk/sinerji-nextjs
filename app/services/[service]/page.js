@@ -24,9 +24,24 @@ async function ServicePage(props) {
 
   return (
     <div>
-      <h1>{service.title}</h1>
-      <Image src={service.image} alt={service.title} width={200} height={200} />
-      <p>{service.description}</p>
+      <div className="w-full h-96 md:h-80 bg-primary-100 flex flex-col justify-center items-center shadow-lg">
+        <h1 className="text-2xl md:text-3xl text-white w-full text-center">
+          {service.title}
+        </h1>
+        <p className="text-white">One of the branches that Laws. has an expertise in.</p>
+      </div>
+      <div className="flex flex-col gap-8 bg-slate-100 h-screen justify-center items-center w-screen py-16">
+        <div className="overflow-hidden shadow-md rounded-md">
+          <Image
+            src={service.image}
+            alt={service.title}
+            width={400}
+            height={400}
+          />
+        </div>
+        <h1 className="text-2xl md:text-3xl text-primary-100 w-full text-center">Service Description</h1>
+        <p className="w-5/6 mx-auto">{service.description}</p>
+      </div>
     </div>
   );
 }

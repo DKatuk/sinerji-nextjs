@@ -9,7 +9,7 @@ const lora = Lora({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="relative min-h-screen flex flex-col box-border">
+      <body className="relative min-h-screen flex flex-col justify-between box-border">
         <div className="absolute top-0 w-full">
           <Header />
         </div>
