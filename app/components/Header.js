@@ -14,7 +14,6 @@ function Header() {
     setIsOpen(!isOpen);
   }
 
-  console.log(isOpen);
   // unmounting mobile dropdown menu when clicked outside
   useEffect(() => {
     function hamburgerClickedOutside(event) {
@@ -31,6 +30,13 @@ function Header() {
       document.removeEventListener("click", hamburgerClickedOutside, true);
     };
   });
+
+  function scrollToDiv(e) {
+    e.preventDefault();
+    document.querySelector("#find-consultation").scrollIntoView({
+      behavior: "smooth",
+    });
+  }
 
   return (
     <div className="relative mt-2 flex justify-center items-center w-full">
@@ -50,7 +56,7 @@ function Header() {
           <Link href="/about" className="rounded-lg font-medium">
             About
           </Link>
-          <button className="rounded-full border border-primary-100 mr-2 px-2 py-1 bg-white hover:text-white hover:bg-primary-100 text-primary-100 font-medium transition-all duration-300">
+          <button onClick={scrollToDiv} className="rounded-full border border-primary-100 mr-2 px-2 py-1 bg-white hover:text-white hover:bg-primary-100 text-primary-100 font-medium transition-all duration-300">
             Find Consultation
           </button>
         </div>
